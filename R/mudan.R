@@ -32,7 +32,7 @@ cleanCounts <- function(
   verbose      = TRUE
 ) {
 
-  if (!class(counts) %in% c("dgCMatrix", "dgTMatrix")) {
+  if (any(!class(counts) %in% c("dgCMatrix", "dgTMatrix"))) {
     if(verbose) {
       message('Converting to sparse matrix ...')
     }
